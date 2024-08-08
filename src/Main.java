@@ -3,7 +3,7 @@ public class Main {
         Conta cc = new ContaCorrente();
         Conta cp = new ContaPoupanca();
 
-
-        System.out.println();
+        cc.imprimirExtrato();
+        cp.imprimirExtrato();
     }
 }

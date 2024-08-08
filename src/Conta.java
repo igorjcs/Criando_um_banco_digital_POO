@@ -32,8 +32,13 @@ public abstract class Conta {
         saldo += valor;
     }
     public void transferir(double valor, Conta contaDestino){
-    this.sacar(valor);
-    contaDestino.depositar(valor);
+        this.sacar(valor);
+        contaDestino.depositar(valor);
+    }
+    protected static void imprimirInfosComuns() {
+        System.out.println(String.format("Agencia: %d", super.agencia));
+        System.out.println(String.format("Conta: %d", super.numero));
+        System.out.println(String.format("Saldo: %.2f", super.saldo));
     }
 
 }
