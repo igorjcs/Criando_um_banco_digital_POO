@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Criando_um_banco_digital_POO.iml" filepath="$PROJECT_DIR$/.idea/Criando_um_banco_digital_POO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Criando_Banco_Com_POO.iml" filepath="$PROJECT_DIR$/Criando_Banco_Com_POO.iml" />
     </modules>
   </component>
 </project>

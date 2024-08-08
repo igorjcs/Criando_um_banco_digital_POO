@@ -6,10 +6,12 @@ public abstract class Conta {
     protected int agencia;
     protected int numero;
     protected double saldo;
+    protected Cliente cliente;
 
-    public Conta(){
-        this.agencia = AGENCIA_PADRAO;
+    public Conta(Cliente cliente){
+        this.agencia = Conta.AGENCIA_PADRAO;
         this.numero = SEQUENCIAL++;
+        this.cliente = cliente;
     }
 
     public int getAgencia() {
@@ -35,10 +37,13 @@ public abstract class Conta {
         this.sacar(valor);
         contaDestino.depositar(valor);
     }
-    protected static void imprimirInfosComuns() {
-        System.out.println(String.format("Agencia: %d", super.agencia));
-        System.out.println(String.format("Conta: %d", super.numero));
-        System.out.println(String.format("Saldo: %.2f", super.saldo));
+    protected void imprimirInfosComuns() {
+        System.out.println(String.format("Titular: %s", this.cliente.getNome()));
+        System.out.println(String.format("Agencia: %d", this.agencia));
+        System.out.println(String.format("Conta: %d", this.numero));
+        System.out.println(String.format("Saldo: %.2f", this.saldo));
     }
 
+    protected void imprimirExtrato() {
+    }
 }
