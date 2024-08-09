@@ -1,3 +1,5 @@
+package BancoDigital;
+
 public abstract class Conta {
 
     private static final int AGENCIA_PADRAO = 1;
