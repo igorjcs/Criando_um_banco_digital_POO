@@ -1,7 +1,6 @@
 package DesafioDioPOO;
 
-import DesafioDioPOO.br.com.desafio.dominio.Curso;
-import DesafioDioPOO.br.com.desafio.dominio.Mentoria;
+import DesafioDioPOO.br.com.desafio.dominio.*;
 
 import java.time.LocalDate;
 
@@ -18,8 +17,8 @@ public class Main {
         curso2.setCargaHoraria(6);
 
 
-        System.out.println(curso1);
-        System.out.println(curso2);
+        //System.out.println(curso1);
+        //System.out.println(curso2);
 
 
         Mentoria mentoria1 = new Mentoria();
@@ -27,6 +26,44 @@ public class Main {
         mentoria1.setDescricao("Descrição mentoria 1");
         mentoria1.setData(LocalDate.now());
 
-        System.out.println(mentoria1);
+        //System.out.println(mentoria1);
+
+
+
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Bootcamp Java Developer");
+        bootcamp.setDescricao("Descrição do bootcamp Java");
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria1);
+
+        Dev devIgor = new Dev();
+        devIgor.setNome("Igor");
+        devIgor.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos inscritos Igor: " + devIgor.getConteudosInscritos());
+        devIgor.progredir();
+        devIgor.progredir();
+        System.out.println("-");
+        System.out.println("Conteúdos inscritos Igor: " + devIgor.getConteudosInscritos());
+        System.out.println("Conteúdos concluídos Igor: " + devIgor.getConteudosConcluidos());
+        System.out.println("XP: " + devIgor.calcularTotalXp());
+
+
+        System.out.println("-------");
+
+        Dev devJovana = new Dev();
+        devJovana.setNome("Jovana");
+        devJovana.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos inscritos Jovana: " + devJovana.getConteudosInscritos());
+        devJovana.progredir();
+        devJovana.progredir();
+        devJovana.progredir();
+        System.out.println("-");
+        System.out.println("Conteúdos inscritos Jovana: " + devJovana.getConteudosInscritos());
+        System.out.println("Conteúdos inscritos Jovana: " + devJovana.getConteudosConcluidos());
+        System.out.println("XP: " + devJovana.calcularTotalXp());
+
+
+
     }
 }
